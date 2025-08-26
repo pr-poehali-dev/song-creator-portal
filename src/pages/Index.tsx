@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
@@ -13,11 +14,7 @@ const Index = () => {
     }
   ];
 
-  const galleryImages = [
-    "https://cdn.poehali.dev/files/4c98febb-f80b-42b8-abc4-044f244ffd1b.jpg",
-    "https://cdn.poehali.dev/files/7a662926-8331-434f-acd6-be27dee4c3eb.jpg",
-    "https://cdn.poehali.dev/files/2a24d1b5-3f2c-4ba2-932d-e6ac92372a34.jpg"
-  ];
+  const galleryImage = "https://cdn.poehali.dev/files/831d1f26-33c7-40bd-82cf-fa383a6c0c10.jpg";
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
@@ -101,16 +98,25 @@ const Index = () => {
       <section id="gallery" className="py-20">
         <div className="container mx-auto px-4">
           <h3 className="text-3xl font-bold font-[Montserrat] text-center mb-12">Галерея</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+          <div className="flex justify-center">
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="w-64 h-64 overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg">
+                  <img 
+                    src={galleryImage} 
+                    alt="NARGIZA Gallery"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl w-full p-0 border-0">
                 <img 
-                  src={image} 
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  src={galleryImage} 
+                  alt="NARGIZA Gallery Full Size"
+                  className="w-full h-auto rounded-lg"
                 />
-              </div>
-            ))}
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
