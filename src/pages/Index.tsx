@@ -40,7 +40,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Icon name="Music" size={32} className="text-primary" />
-            <h1 className="text-2xl font-bold font-[Montserrat]">Alex Musician</h1>
+            <h1 className="text-2xl font-bold font-[Montserrat]">NARGIZA</h1>
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#home" className="hover:text-primary transition-colors">Главная</a>
@@ -146,7 +146,7 @@ const Index = () => {
       <footer className="border-t border-border py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground font-[Open_Sans]">
-            © 2024 Alex Musician. Все права защищены.
+            © 2024 NARGIZA. Все права защищены.
           </p>
         </div>
       </footer>
