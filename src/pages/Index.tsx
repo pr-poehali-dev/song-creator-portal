@@ -1,12 +1,155 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const albums = [
+    {
+      id: 1,
+      title: "Midnight Echoes",
+      year: "2024",
+      cover: "/img/b32a7585-e458-4710-86c9-54f981e083d8.jpg",
+      description: "Атмосферный альбом с глубокими басами и мелодичными синтезаторами"
+    },
+    {
+      id: 2,
+      title: "Neon Dreams",
+      year: "2023", 
+      cover: "/img/9e7945b8-df31-426a-a872-da66f0324671.jpg",
+      description: "Синтвейв композиции, вдохновленные ночным городом"
+    },
+    {
+      id: 3,
+      title: "Digital Soul",
+      year: "2022",
+      cover: "/img/cb19f3f7-3d5c-42d2-b1a2-da1857e6b60e.jpg", 
+      description: "Электронная музыка с живыми инструментами"
+    }
+  ];
+
+  const galleryImages = [
+    "/img/b32a7585-e458-4710-86c9-54f981e083d8.jpg",
+    "/img/9e7945b8-df31-426a-a872-da66f0324671.jpg",
+    "/img/cb19f3f7-3d5c-42d2-b1a2-da1857e6b60e.jpg"
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <header className="border-b border-border">
+        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <Icon name="Music" size={32} className="text-primary" />
+            <h1 className="text-2xl font-bold font-[Montserrat]">Alex Musician</h1>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <a href="#home" className="hover:text-primary transition-colors">Главная</a>
+            <a href="#discography" className="hover:text-primary transition-colors">Дискография</a>
+            <a href="#gallery" className="hover:text-primary transition-colors">Галерея</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Контакты</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="py-20 text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-5xl font-bold font-[Montserrat] mb-6">
+            Автор и исполнитель<br />
+            <span className="text-primary">собственных песен</span>
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto font-[Open_Sans]">
+            Создаю атмосферную электронную музыку, сочетая современные звуки с живыми инструментами
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Button size="lg" className="font-[Open_Sans]">
+              <Icon name="Play" size={20} className="mr-2" />
+              Слушать музыку
+            </Button>
+            <Button variant="outline" size="lg" className="font-[Open_Sans]">
+              <Icon name="Download" size={20} className="mr-2" />
+              Скачать треки
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Discography */}
+      <section id="discography" className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <h3 className="text-3xl font-bold font-[Montserrat] text-center mb-12">Дискография</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {albums.map((album) => (
+              <Card key={album.id} className="bg-background hover:bg-accent transition-colors group cursor-pointer">
+                <CardContent className="p-6">
+                  <div className="aspect-square mb-4 overflow-hidden rounded-lg">
+                    <img 
+                      src={album.cover} 
+                      alt={album.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <h4 className="text-xl font-semibold font-[Montserrat] mb-2">{album.title}</h4>
+                  <p className="text-muted-foreground font-[Open_Sans] mb-2">{album.year}</p>
+                  <p className="text-sm text-muted-foreground font-[Open_Sans] mb-4">{album.description}</p>
+                  <Button variant="ghost" size="sm" className="w-full">
+                    <Icon name="Play" size={16} className="mr-2" />
+                    Воспроизвести
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="py-20">
+        <div className="container mx-auto px-4">
+          <h3 className="text-3xl font-bold font-[Montserrat] text-center mb-12">Галерея</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img 
+                  src={image} 
+                  alt={`Gallery image ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-20 bg-card">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-3xl font-bold font-[Montserrat] mb-8">Связаться со мной</h3>
+          <div className="flex justify-center space-x-8">
+            <a href="#" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
+              <Icon name="Instagram" size={32} />
+              <span className="font-[Open_Sans]">Instagram</span>
+            </a>
+            <a href="#" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
+              <Icon name="Youtube" size={32} />
+              <span className="font-[Open_Sans]">YouTube</span>
+            </a>
+            <a href="#" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
+              <Icon name="Mail" size={32} />
+              <span className="font-[Open_Sans]">Email</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground font-[Open_Sans]">
+            © 2024 Alex Musician. Все права защищены.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
