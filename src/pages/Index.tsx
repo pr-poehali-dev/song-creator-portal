@@ -20,9 +20,17 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Background Image */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: "url('https://cdn.poehali.dev/files/7a662926-8331-434f-acd6-be27dee4c3eb.jpg')"
+        }}
+      />
+      <div className="relative z-10">
       {/* Header */}
-      <header className="border-b border-border">
+      <header className="border-b border-border bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Icon name="Music" size={32} className="text-primary" />
@@ -61,7 +69,7 @@ const Index = () => {
       </section>
 
       {/* Discography */}
-      <section id="discography" className="py-20 bg-card">
+      <section id="discography" className="py-20 bg-card/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <h3 className="text-3xl font-bold font-[Montserrat] text-center mb-12">Дискография</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,7 +116,7 @@ const Index = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 bg-card">
+      <section id="contact" className="py-20 bg-card/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-3xl font-bold font-[Montserrat] mb-8">Связаться со мной</h3>
           <div className="flex justify-center space-x-8">
@@ -129,13 +137,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
+      <footer className="border-t border-border py-8 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground font-[Open_Sans]">
             © 2024 NARGIZA. Все права защищены.
           </p>
         </div>
       </footer>
+      </div>
     </div>
   );
 };
