@@ -125,18 +125,10 @@ const Index = () => {
       <section id="contact" className="py-20 bg-card/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-3xl font-bold font-[Montserrat] mb-8">Связаться со мной</h3>
-          <div className="flex justify-center space-x-8">
-            <a href="#" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
-              <Icon name="Instagram" size={32} />
-              <span className="font-[Open_Sans]">Instagram</span>
-            </a>
-            <a href="#" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
-              <Icon name="Youtube" size={32} />
-              <span className="font-[Open_Sans]">YouTube</span>
-            </a>
-            <a href="#" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
-              <Icon name="Mail" size={32} />
-              <span className="font-[Open_Sans]">Email</span>
+          <div className="flex justify-center">
+            <a href="https://t.me/+S_nWXyBTkcI0MzQy" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center space-y-2 hover:text-primary transition-colors">
+              <Icon name="Send" size={32} />
+              <span className="font-[Open_Sans]">Telegram</span>
             </a>
           </div>
         </div>
