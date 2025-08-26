@@ -6,24 +6,10 @@ const Index = () => {
   const albums = [
     {
       id: 1,
-      title: "Midnight Echoes",
-      year: "2024",
+      title: "Россия и Сила",
+      year: "2025",
       cover: "/img/b32a7585-e458-4710-86c9-54f981e083d8.jpg",
-      description: "Атмосферный альбом с глубокими басами и мелодичными синтезаторами"
-    },
-    {
-      id: 2,
-      title: "Neon Dreams",
-      year: "2023", 
-      cover: "/img/9e7945b8-df31-426a-a872-da66f0324671.jpg",
-      description: "Синтвейв композиции, вдохновленные ночным городом"
-    },
-    {
-      id: 3,
-      title: "Digital Soul",
-      year: "2022",
-      cover: "/img/cb19f3f7-3d5c-42d2-b1a2-da1857e6b60e.jpg", 
-      description: "Электронная музыка с живыми инструментами"
+      description: "Патриотический альбом о силе и величии Родины"
     }
   ];
 
