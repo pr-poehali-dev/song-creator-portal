@@ -8,7 +8,7 @@ const Index = () => {
       id: 1,
       title: "Россия и Сила",
       year: "2025",
-      cover: "https://cdn.poehali.dev/files/2c54a046-783b-42fb-a31a-3c73536313bd.jpg",
+      cover: "https://cdn.poehali.dev/files/4c98febb-f80b-42b8-abc4-044f244ffd1b.jpg",
       description: "Патриотический альбом о силе и величии Родины"
     }
   ];
